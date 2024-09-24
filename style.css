@@ -393,7 +393,7 @@ html {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 1.5rem;
+    gap: 2.5rem;
     justify-content: space-between;
 }
 
