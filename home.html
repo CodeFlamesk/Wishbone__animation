@@ -294,7 +294,7 @@
 			<section class="featured-projects" id="projects">
 				<div class="featured-projects__box-projects box-projects">
 					<div class="box-projects__contant contant"> <!-- ALL BLOCK-COLUMN -->
-						<div class="contant__title" data-watch data-watch-once>
+						<div class="contant__title " data-watch data-watch-once>
 							<p>Featured projects</p>
 							<p>Some of the latest and greatest projects from us here at Wishbone+Partners.</p>
 						</div>
@@ -307,7 +307,7 @@
 							</div>
 							<div class="img-card__item item">
 								<div class="item__img-text" data-watch data-watch-once>
-									<p>New York</p><!-- може винести з блоку -->
+									<p>New York</p>
 									<p>Big Road Brewery</p>
 
 									<div class="item__buttonn">
@@ -539,6 +539,7 @@
 		document.addEventListener('DOMContentLoaded', () => {
 			let sections = document.querySelectorAll('section');
 			let navLinks = document.querySelectorAll('.menu__link');
+			let headerOffset = 80; // Adjust this based on your header height
 
 			window.onscroll = () => {
 				let top = window.scrollY;
@@ -546,7 +547,7 @@
 				let documentHeight = document.documentElement.scrollHeight;
 
 				sections.forEach(section => {
-					let offset = section.offsetTop - 150;
+					let offset = section.offsetTop - headerOffset; // Use headerOffset
 					let height = section.offsetHeight;
 					let id = section.getAttribute('id');
 
@@ -576,8 +577,16 @@
 				document.body.style.overflow = 'auto';
 				const targetId = this.getAttribute('href');
 				const targetElement = document.querySelector(targetId);
+
 				if (targetElement) {
-					targetElement.scrollIntoView({ behavior: 'smooth' });
+					const headerOffset = 59;
+					const elementPosition = targetElement.getBoundingClientRect().top;
+					const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+					window.scrollTo({
+						top: offsetPosition,
+						behavior: 'smooth'
+					});
 				}
 			});
 		});
