@@ -29,6 +29,6 @@ This is a pet project for improving animation and JavaScript skills. The main go
 
 1. Install dependencies: `npm i`
 2. Start the project: `npm run dev`
-3. 
+   
 This project helped me enhance my skills in layout building, JavaScript, and responsive design.
 
